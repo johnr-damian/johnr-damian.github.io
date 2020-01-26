@@ -135,8 +135,7 @@ a:hover, a:active
 }
 
 /* ================= Content ================= */
-/* ============ About Page ============ */
-.about-content
+.about-content, .projects-content, .contact-content
 {
     grid-area: content;
     display: block;
@@ -145,6 +144,7 @@ a:hover, a:active
     margin: 0.5vw 0vw;
 }
 
+/* ============ About Page ============ */
 .about-content h2
 {
     font-size: 3vw;
@@ -156,10 +156,33 @@ a:hover, a:active
     font-size: 2vw;
 }
 
-.content
+/* ============ Projects Page ============ */
+.projects-content dl
 {
-    grid-area: content;
     display: grid;
+    grid-template-columns: minmax(min-content, 25%) auto;
+    grid-template-rows: auto;
+
+    border: blue 1px solid;
+}
+
+.projects-content dt
+{
+    display: block;
 
     border: red 1px solid;
+}
+
+.projects-content dd
+{
+    border: green 1px solid;
+}
+
+.projects-KoKeKoKo
+{
+    background-image: url("https://github.com/johnr-damian/KoKeKoKo/blob/master/Documents/Images/StartingGameBot.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
