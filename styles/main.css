@@ -73,7 +73,7 @@ a:hover, a:active
 }
 
 /* ============ Classes ============ */
-
+/* ================= Title ================= */
 .title
 {
     grid-area: title;
@@ -112,7 +112,7 @@ a:hover, a:active
 
 .navigation a
 {
-    padding: 0.5vw 1vw;
+    padding: 0.5vw 1.5vw;
     margin: 0vw 4vw;
 }
 
@@ -132,6 +132,28 @@ a:hover, a:active
     border-radius: 1vw;
     height: 0.5vw;
     width: 80%;
+}
+
+/* ================= Content ================= */
+/* ============ About Page ============ */
+.about-content
+{
+    grid-area: content;
+    display: block;
+
+    padding: 1vw;
+    margin: 0.5vw 0vw;
+}
+
+.about-content h2
+{
+    font-size: 3vw;
+    font-weight: bolder;
+}
+
+.about-content p
+{
+    font-size: 2vw;
 }
 
 .content
