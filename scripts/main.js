@@ -1,4 +1,4 @@
-let environment = null;
+var environment = null;
 
 /**
  * The entry point of main.js. Checks the time 
@@ -64,4 +64,14 @@ function draw()
 function windowResized()
 {
     resizeCanvas(windowWidth, windowHeight);
+}
+
+
+if(environment === null)
+{
+    let current_stylesheet = document.createElement("link");
+    current_stylesheet.type = "text/css";
+    current_stylesheet.rel = "stylesheet";
+    current_stylesheet.href = "../styles/themes/night.css";
+    document.head.appendChild(current_stylesheet);
 }
