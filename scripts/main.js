@@ -13,17 +13,9 @@ function initialize()
     current_stylesheet.type = "text/css";
     current_stylesheet.rel = "stylesheet";
     //Morning Theme
-    if(current_time < 8)
+    if(current_time < 1)
     {
-        current_stylesheet.href = "styles/themes/morning.css";
-        current_theme.push("");
-        current_theme.push("");
-        current_theme.push("");
-    }
-    //Noon Theme
-    else if(current_time < 16)
-    {
-        current_stylesheet.href = "styles/themes/noon.css";
+        current_stylesheet.href = "styles/themes/night.css";
         current_theme.push("");
         current_theme.push("");
         current_theme.push("");
@@ -32,9 +24,12 @@ function initialize()
     else
     {
         current_stylesheet.href = "styles/themes/night.css";
-        current_theme.push("");
-        current_theme.push("");
-        current_theme.push("");
+        //current_theme.push("#133572");
+        current_theme.push("#0b111b");
+        //current_theme.push("#0a396e");
+        current_theme.push("#172638");
+        current_theme.push("#172638");
+        //current_theme.push("#133572");
     }
 
     document.head.appendChild(current_stylesheet);

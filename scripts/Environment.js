@@ -7,11 +7,12 @@ class Environment
         this.Fill = theme[1];
         this.Stroke = theme[2];
 
-        //Prepare the Perlin Noise
-        noiseSeed(random());
+        //Prepare the Random and Perlin Noise
+        noiseSeed(1000);
 
         //Create the Terrain
         this.Terrain = new Terrain(this.Fill, this.Stroke);
+        this.Forest = new Forest(this.Terrain.GetRandomLocations(5), this.Fill, this.Stroke);
     }
 
     /**
@@ -19,9 +20,14 @@ class Environment
      */
     Draw()
     {
-        background(175);
+        background(this.Background);
+        fill(this.Fill);
+        stroke(this.Stroke);
 
         //Place the Terrain
         this.Terrain.PlaceTerrain();
+
+        //Place the Forest
+        this.Forest.PlaceForest();
     }
 }

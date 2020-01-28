@@ -1,0 +1,19 @@
+h1, h2, h3, h4, h5, h6
+{
+    color: #bdc49d;
+}
+
+a, p, a:link, a:visited
+{
+    color: #bdc49d;
+}
+
+strong, a:hover
+{
+    color: #f6f4b5;
+}
+
+.separator
+{
+    border-color: #172638;
+}

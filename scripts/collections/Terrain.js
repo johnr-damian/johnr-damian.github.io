@@ -21,6 +21,34 @@ class Terrain
     }
 
     /**
+     * Randomly picks a location from the Terrain.
+     * @param {The number of vertex is returned} number_of_location 
+     */
+    GetRandomLocations(number_of_location)
+    {
+        let locations = [];
+
+        for(let iterator = 0; iterator < number_of_location; iterator++)
+        {
+            let current_location = random(this.Vertices);
+            let existing = false;
+            for(let location = 0; location < locations.length; location++)
+            {
+                if(current_location.x === this.Vertices[location].x)
+                {
+                    existing = true;
+                    break;
+                }
+            }
+
+            if(!existing)
+                locations.push(current_location);
+        }
+
+        return locations;
+    }
+
+    /**
      * Places generated land in the environment.
      */
     PlaceTerrain()
