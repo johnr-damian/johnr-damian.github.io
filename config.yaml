@@ -1,0 +1,16 @@
+baseURL: https://johnr-damian.github.io
+languageCode: en-US
+params:
+  author: John Rhey Damian
+  description: a blog, a journal, and a portfolio
+  github: https://github.com/johnr-damian
+taxonomies:
+  #e.g. Animation, Artificial Intelligence, Geometry
+  area: areas
+  #e.g. Journal, Project, or Tutorial
+  category: categories
+  #e.g. C, C++, C#, Javascript, R
+  language: languages
+  #e.g. For Tutorial and Project page
+  series: series
+title: Algomorphogenesis

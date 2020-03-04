@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang='en-US'>
+    <head>
+        <base href='{{ .Site.BaseURL }}' />
+        <meta charset='utf-8' />
+        <meta http-equiv='x-ua-compatible' content='ie=edge, chrome=1' />
+        <meta name='author' content='{{ .Site.Params.author }}' />
+        <meta name='description' content='{{ default .Site.Params.description .Page.Description }}' />
+        <meta name='keywords' content='blog, journal, portofolio, john rhey damian' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        {{ hugo.Generator }}
+        <title>{{ with .Page.Title }}{{ . }} | {{ end }}{{ .Site.Title }}</title>
+
+        <!-- Stylesheets -->
+        <link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cormorant+Garamond|Montserrat&display=swap' />
+        <link type='text/css' rel='stylesheet' href='{{ relURL "styles/index.css" }}' />
+        {{ block "styles" . }}
+
+        {{ end }}
+
+        <!-- Scripts -->
+        {{ block "scripts" . }}
+
+        {{ end }}
+    </head>
+    <body>
+        <header class='document_header'>
+            <a href='{{ .Site.BaseURL }}' class="document_title">
+                <h1>{{ .Site.Title }}</h1>
+            </a>
+            <nav class='document_navigation'>
+                <ul class='list-horizontal-navigation'>
+                    <a href='{{ relURL "about" }}'>
+                        <li>About</li>
+                    </a>
+                    <a href='{{ relURL "blog" }}'>
+                        <li>Blog</li>
+                    </a>
+                    <a href='{{ relURL "projects" }}'>
+                        <li>Projects</li>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+        <main class='document_main'>
+            {{ block "main" . }}
+
+            {{ end }}
+        </main>
+    </body>
+</html>
