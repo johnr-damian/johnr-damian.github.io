@@ -10,4 +10,9 @@ draft: false
 title: About
 ---
 
-Testing
+About
+-----
+Welcome to my personal website!  
+I am John Rhey Damian &mdash; an undergraduate student of BS Computer Science.  
+I created this website to serve as a blog, a journal, and a portfolio.  
+Currently, I am learning more about **artificial intelligence** and **natural simulations**.

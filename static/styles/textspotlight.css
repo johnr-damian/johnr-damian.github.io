@@ -19,8 +19,7 @@ h2
 p
 {
     text-align: center;
-    text-indent: 0vw;
-
+    
     grid-area: page_note;
     display: block;
     align-self: flex-start;
