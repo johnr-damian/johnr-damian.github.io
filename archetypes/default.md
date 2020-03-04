@@ -1,9 +1,6 @@
 ---
-#Blank Webpage
+#Blank Page
 
-#Webpage Author
-author: John Rhey Damian
-#Webpage Creation Date
 date: {{ .Date }}
 draft: true
 ---

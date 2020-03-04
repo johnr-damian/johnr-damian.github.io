@@ -1,0 +1,29 @@
+.document_main
+{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, minmax(min-content, 1fr));
+    grid-template-areas: "page_greeting"
+                         "page_note";
+}
+
+h2
+{
+    grid-area: page_greeting;
+    display: block;
+    align-self: flex-end;
+    justify-self: center;
+    padding: 1vw 1vw 0.5vw;
+}
+
+p
+{
+    text-align: center;
+    text-indent: 0vw;
+
+    grid-area: page_note;
+    display: block;
+    align-self: flex-start;
+    justify-self: center;
+    padding: 0.5vw 1vw 1vw;
+}

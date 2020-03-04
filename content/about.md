@@ -1,17 +1,13 @@
 ---
-#Simple Webpage
+#Plain Page
 
-#Author
-author: John Rhey Damian
 #Date Created
-date: 2020-03-03T21:25:23+08:00
+date: 2020-03-04T18:22:07+08:00
+#Page Description
+description: About Algomorphognesis — a blog, a journal, and a portfolio
 draft: false
-#Title
+#Page Title
 title: About
 ---
 
-About
------
-Hello, I'm John Rhey Damian! <br />
-I am currently an undergraduate student of Bachelor Science of Computer Science. <br />
-I like to develop things about **artificial intelligence** and **natural simulations**. <br />
+Testing
