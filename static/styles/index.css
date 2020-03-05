@@ -117,7 +117,9 @@ p /* Page Paragraph */
 .document_main
 {
     grid-area: document_main;
-    display: block;
+    display: grid;
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
     padding: 0.5vw 1vw 1vw;
 }
 

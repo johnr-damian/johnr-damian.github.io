@@ -10,9 +10,9 @@ draft: false
 title: About
 ---
 
-About
------
-Welcome to my personal website!  
-I am John Rhey Damian &mdash; an undergraduate student of BS Computer Science.  
-I created this website to serve as a blog, a journal, and a portfolio.  
-Currently, I am learning more about **artificial intelligence** and **natural simulations**.
+{{< spotlight title="About" >}}
+    Welcome to my personal website! <br />
+    I am <strong>John Rhey Damian</strong> &mdash; an undergraduate student of BS Computer Science. <br />
+    I created this website to serve as a blog, a journal, and a portfolio. <br />
+    Currently, I am learning more about <strong>artificial intelligence</strong> and <strong>natural simulations</strong>.
+{{< /spotlight >}}

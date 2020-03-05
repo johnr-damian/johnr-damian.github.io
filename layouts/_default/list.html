@@ -1,6 +1,9 @@
 {{ define "styles" }}
-
+    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/textlist.css" }}' />
 {{ end }}
 {{ define "main" }}
     {{ .Content }}
+    <nav class="text_list">
+        
+    </nav>
 {{ end }}

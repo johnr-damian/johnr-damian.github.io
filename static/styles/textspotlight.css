@@ -1,28 +1,30 @@
-.document_main
+.spotlight
 {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: repeat(2, minmax(min-content, 1fr));
-    grid-template-areas: "page_greeting"
-                         "page_note";
+    grid-template-areas: "spotlight_title"
+                         "spotlight_subtitle";
+    align-self: center;
+    justify-self: center;
 }
 
-h2
+.spotlight_title
 {
-    grid-area: page_greeting;
+    grid-area: spotlight_title;
     display: block;
     align-self: flex-end;
     justify-self: center;
+    text-align: center;
     padding: 1vw 1vw 0.5vw;
 }
 
-p
+.spotlight_subtitle
 {
-    text-align: center;
-    
-    grid-area: page_note;
+    grid-area: spotlight_subtitle;
     display: block;
     align-self: flex-start;
     justify-self: center;
+    text-align: center;
     padding: 0.5vw 1vw 1vw;
 }

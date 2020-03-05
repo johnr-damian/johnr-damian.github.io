@@ -10,4 +10,6 @@ draft: false
 title: Projects
 ---
 
-Projects
+{{< spotlight title="Projects" >}}
+    :Check out my personal projects!
+{{< /spotlight >}}

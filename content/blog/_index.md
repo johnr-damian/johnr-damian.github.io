@@ -10,4 +10,6 @@ draft: false
 title: Blog
 ---
 
-Blog
+{{< spotlight title="Blog" >}}
+    :A difficult yet beautiful adventure...
+{{< /spotlight >}}

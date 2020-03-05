@@ -1,0 +1,45 @@
+.document_main
+{
+    grid-auto-rows: minmax(min-content, max-content);
+}
+
+/* Classes */
+.spotlight
+{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(min-content, max-content));
+    grid-template-rows: auto;
+    grid-template-areas: "spotlight_title spotlight_subtitle";
+    align-self: flex-start;
+    justify-self: baseline;
+    padding: 1vw 1vw 0.5vw;
+}
+
+.text_list
+{
+    display: block;
+    padding: 0.5vw 1vw 1vw;
+    overflow-y: auto;
+}
+
+/* Subclasses */
+.spotlight_title
+{
+    grid-area: spotlight_title;
+    display: block;
+    align-self: baseline;
+    justify-self: flex-end;
+    text-align: justify;
+}
+
+.spotlight_subtitle
+{
+    font-size: 1vw;
+
+    grid-area: spotlight_subtitle;
+    display: block;
+    align-self: baseline;
+    justify-self: flex-start;
+    text-align: justify;
+    padding: 0vw 0vw 0vw 1vw;
+}
