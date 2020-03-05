@@ -102,6 +102,14 @@ p /* Page Paragraph */
     margin: 0vw 1vw;
 }
 
+.list-vertical-navigation > a
+{
+    font-size: 1.5vw;
+
+    padding: 1vw 0.5vw;
+    margin: 1vw 0vw;
+}
+
 /* Classes */
 .document_header
 {

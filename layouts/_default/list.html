@@ -3,7 +3,13 @@
 {{ end }}
 {{ define "main" }}
     {{ .Content }}
-    <nav class="text_list">
-        
+    <nav class='text_list'>
+        <ul class='list-vertical-navigation'>
+            {{ range .Page.Pages }}
+                <a href='{{ .Page.RelPermalink }}'>
+                    <li>{{ .Page.Title }}</li>
+                </a>
+            {{ end }}
+        </ul>
     </nav>
 {{ end }}
