@@ -1,5 +1,25 @@
 {{ define "styles" }}
     <link type='text/css' rel='stylesheet' href='{{ relURL "styles/textspotlight.css" }}' />
+    <style type="text/css">
+        canvas
+        {
+            display: block;
+            z-index: -1;
+        }
+    </style>
+{{ end }}
+{{ define "scripts" }}
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.20.13/system.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js'></script>
+    <script type='text/javascript' src='{{ relURL "scripts/complexgraphics.js" }}'></script>
+    <script type='text/javascript' src='{{ relURL "scripts/main.js" }}'></script>
+    <script type="text/javascript">
+        let current_class = null;
+        SystemJS.import("./scripts/complexgraphics.js").then(function(loaded){
+            current_class = new loaded.ComplexGraphics();
+            current_class.AnimationLoop();
+        });
+    </script>
 {{ end }}
 {{ define "main" }}
     {{ .Content }}
