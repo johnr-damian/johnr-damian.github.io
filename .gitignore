@@ -121,5 +121,4 @@ temp/
 # End of https://www.gitignore.io/api/node,hugo
 
 #Typescript Generated Files
-static/scripts/*.d.ts
-static/scripts/*.js
+static/scripts/library

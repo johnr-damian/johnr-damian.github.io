@@ -5,7 +5,9 @@
   "main": "application.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "parcel": "parcel build public/index.html",
+    "rollup": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -23,8 +25,11 @@
   },
   "homepage": "https://github.com/johnr-damian/johnr-damian.github.io#readme",
   "devDependencies": {
+    "@rollup/plugin-typescript": "^4.0.0",
     "@types/d3": "^5.7.2",
     "d3": "^5.15.0",
+    "parcel-bundler": "^1.12.4",
+    "rollup": "^2.0.6",
     "three": "^0.113.2",
     "typescript": "^3.8.2"
   },
