@@ -1,0 +1,39 @@
+/* textcontent.css: Classes for textual contents */
+
+/* =============== Highlight =============== */
+.text-highlight
+{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-areas: "highlight_title"
+                         "highlight_subtitle";
+    align-self: center;
+    justify-self: center;
+}
+
+.text-highlight > h2
+{
+    grid-area: highlight_title;
+    display: block;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    padding: 1vw 1vw 0vw;
+}
+
+.text-highlight > p
+{
+    grid-area: highlight_subtitle;
+    display: block;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    padding: 0vw 1vw 1vw;
+}
+
+/* =============== Content =============== */
+.text-content
+{
+    display: block;
+}

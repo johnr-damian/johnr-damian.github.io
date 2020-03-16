@@ -10,6 +10,7 @@ draft: false
 title: Blog
 ---
 
-{{< spotlight title="Blog" >}}
-    :A difficult yet beautiful adventure...
-{{< /spotlight >}}
+{{% partition class="text-highlight" %}}  
+## Sorry!  
+Either I haven't started yet, or I am changing stuff...  
+{{% /partition %}}

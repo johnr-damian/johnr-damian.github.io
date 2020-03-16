@@ -1,9 +1,7 @@
 {{ define "styles" }}
-    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/textspotlight.css" }}' />
+    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/textcontent.css" }}' />
 {{ end }}
-{{ define "scripts" }}
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js' integrity='sha256-gSh8eotzb/CVvCREGPUNgIWuDnTYnZvVOQnRrP1eDjI=' crossorigin='anonymous'></script>
-{{ end }}
+
 {{ define "main" }}
     {{ .Content }}
 {{ end }}

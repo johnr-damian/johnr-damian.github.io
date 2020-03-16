@@ -1,15 +1,19 @@
 {{ define "styles" }}
-    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/textlist.css" }}' />
+    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/textcontent.css" }}' />
 {{ end }}
+
 {{ define "main" }}
-    {{ .Content }}
-    <nav class='text_list'>
-        <ul class='list-vertical-navigation'>
-            {{ range .Page.Pages }}
-                <a href='{{ .Page.RelPermalink }}'>
-                    <li>{{ .Page.Title }}</li>
-                </a>
-            {{ end }}
-        </ul>
-    </nav>
+    {{ if eq (len .Page.Pages) 0 }}
+        {{ .Content }}
+    {{ else }}
+        <nav>
+            <ul class='list-vertical-navigation'>
+                {{ range .Page.Pages }}
+                    <a href='{{ .Page.RelPermalink }}'>
+                        <li>{{ .Page.Title }}</li>
+                    </a>
+                {{ end }}
+            </ul>
+        </nav>
+    {{ end }}
 {{ end }}

@@ -1,8 +1,12 @@
 baseURL: https://johnr-damian.github.io
 languageCode: en-US
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 params:
   author: John Rhey Damian
-  description: a blog, a journal, and a portfolio
+  description: a blog, and a portfolio
   github: https://github.com/johnr-damian
   gmail: johnr.damian98@gmail.com
 taxonomies:

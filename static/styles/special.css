@@ -1,0 +1,19 @@
+/* special.css: Special Classes */
+
+/* =============== Navigation =============== */
+.list-horizontal-navigation, .list-vertical-navigation
+{
+    list-style-type: none;
+}
+
+.list-horizontal-navigation > a
+{
+    padding: 0.5vw 1vw;
+    margin: 0vw 1vw;
+}
+
+.list-vertical-navigation > a
+{
+    display: block;
+    padding: 0.5vw 1vw;
+}

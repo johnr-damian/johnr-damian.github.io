@@ -10,6 +10,7 @@ draft: false
 title: Projects
 ---
 
-{{< spotlight title="Projects" >}}
-    :Check out my personal projects!
-{{< /spotlight >}}
+{{% partition class="text-highlight" %}}  
+## Sorry!  
+It looks like I have nothing to show here... yet!  
+{{% /partition %}}

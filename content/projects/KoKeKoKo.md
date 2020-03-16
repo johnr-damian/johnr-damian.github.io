@@ -10,7 +10,8 @@ draft: false
 title: KoKeKoKo
 ---
 
-{{< spotlight title="KoKeKoKo" >}}
-    A StarCraft 2 Bot that uses Monte Carlo Tree Search (MCTS) Algorithm <br />
-    to handle the Micromanagement and Macromanagement tasks of the game <br />
-{{< /spotlight >}}
+{{% partition class="text-highlight" %}}  
+## KoKeKoKo  
+A StarCraft 2 Bot that uses Monte Carlo Tree Search (MCTS) Algorithm  
+to handle the Micromanagement and Macromanagement tasks of the game.  
+{{% /partition %}}

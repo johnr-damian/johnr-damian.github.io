@@ -7,21 +7,39 @@
         <meta http-equiv='x-ua-compatible' content='ie=edge, chrome=1' />
         <meta name='author' content='{{ .Site.Params.author }}' />
         <meta name='description' content='{{ default .Site.Params.description .Page.Description }}' />
-        <meta name='keywords' content='blog, journal, portofolio, john rhey damian' />
+        <meta name='keywords' content='blog, portofolio, john rhey damian' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         {{ hugo.Generator }}
         <title>{{ with .Page.Title }}{{ . }} | {{ end }}{{ .Site.Title }}</title>
 
         <!-- Stylesheets -->
         <link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cormorant+Garamond|Montserrat&display=swap' />
-        <link type='text/css' rel='stylesheet' href='{{ relURL "styles/index.css" }}' />
+        <link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons' />
+        <link type='text/css' rel='stylesheet' href='{{ relURL "styles/main.css" }}' />
+        <link type='text/css' rel='stylesheet' href='{{ relURL "styles/special.css" }}' />
         {{ block "styles" . }}
 
         {{ end }}
+        {{ with .Page.Params.styles }}
+            {{ range . }}
+                <link type='text/css' rel='stylesheet' href='{{ relURL "styles/." }}' />
+            {{ end }}
+        {{ end }}
 
         <!-- Scripts -->
+        {{ with .Page.Params.d3 }}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.min.js" integrity="sha256-m0QmIsBXcOMiETRmpT3qg2IQ/i0qazJA2miCHzOmS1Y=" crossorigin="anonymous"></script>
+        {{ end }}
+        {{ with .Page.Params.three }}
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js' integrity='sha256-gSh8eotzb/CVvCREGPUNgIWuDnTYnZvVOQnRrP1eDjI=' crossorigin='anonymous'></script>
+        {{ end }}
         {{ block "scripts" . }}
 
+        {{ end }}
+        {{ with .Page.Params.scripts }}
+            {{ range . }}
+                <script type='text/javascript' src='{{ relURL "scripts/." }}'></script>
+            {{ end }}
         {{ end }}
     </head>
     <body>
