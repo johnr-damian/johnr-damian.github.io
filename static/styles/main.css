@@ -1,5 +1,5 @@
 /* main.css: General HTML */
-* { outline: 1px solid red; outline-offset: -1px;}
+/* * { outline: 1px solid red; outline-offset: -1px;} */
 /* =============== Plain Containers =============== */
 html
 {
@@ -47,6 +47,8 @@ a:link, a:visited
 canvas /*******/
 {
     display: block;
+    position: absolute;
+    z-index: -1;
 }
 
 figure

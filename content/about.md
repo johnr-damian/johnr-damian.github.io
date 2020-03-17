@@ -15,4 +15,5 @@ Welcome to my personal website!
 I am **John Rhey Damian** — an undergraduate student of BS Computer Science.  
 I created this website to serve as a blog and a portfolio  
 Currently, I am learning more about **Artificial Intelligence** and **Natural Simulations**.  
+{{% exlink type="google" link="mailto:johnr.damian98@gmail.com" %}} Gmail {{% /exlink %}} {{% exlink type="github" link="https://github.com/johnr-damian" %}} Github {{% /exlink %}}  
 {{% /partition %}}
