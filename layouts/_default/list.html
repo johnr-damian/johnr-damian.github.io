@@ -7,9 +7,12 @@
         {{ .Content }}
     {{ else }}
         <nav>
-            <ul class='list-vertical-navigation'>
+            <ul class='list-horizontal-navigation list-horizontal-card'>
                 {{ range .Page.Pages }}
                     <a href='{{ .Page.RelPermalink }}'>
+                        <figure>
+                            <img src='{{ relURL .Page.Params.project_image }}' />
+                        </figure>
                         <li>{{ .Page.Title }}</li>
                     </a>
                 {{ end }}
