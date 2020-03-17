@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Algomorphogenesis</title><link>https://johnr-damian.github.io/</link><description>Recent content on Algomorphogenesis</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Wed, 04 Mar 2020 18:21:28 +0800</lastBuildDate><atom:link href="https://johnr-damian.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>KoKeKoKo</title><link>https://johnr-damian.github.io/projects/kokekoko/</link><pubDate>Thu, 05 Mar 2020 18:00:45 +0800</pubDate><guid>https://johnr-damian.github.io/projects/kokekoko/</guid><description>KoKeKoKo A StarCraft 2 Bot that uses Monte Carlo Tree Search (MCTS) Algorithm
+to handle the Micromanagement and Macromanagement tasks of the game.
+View Repository</description></item><item><title>About</title><link>https://johnr-damian.github.io/about/</link><pubDate>Wed, 04 Mar 2020 18:22:07 +0800</pubDate><guid>https://johnr-damian.github.io/about/</guid><description>Welcome to my personal website!
+I am John Rhey Damian — an undergraduate student of BS Computer Science.
+I created this website to serve as a blog and a portfolio
+Currently, I am learning more about Artificial Intelligence and Natural Simulations.
+Gmail Github</description></item></channel></rss>
