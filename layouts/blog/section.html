@@ -1,0 +1,11 @@
+{{ define "styles" }}
+    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/textcontent.css" }}' />
+{{ end }}
+
+{{ define "main" }}
+    {{ if eq (len .Page.Pages) 0 }}
+        {{ .Content }}
+    {{ else }}
+        
+    {{ end }}
+{{ end }}
