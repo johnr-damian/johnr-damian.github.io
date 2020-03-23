@@ -1,0 +1,24 @@
+{{ define "styles" }}
+    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/textcontent.css" }}' />
+    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/blog.css" }}' />
+{{ end }}
+
+{{ define "main" }}
+    {{ if eq (len .Page.Pages) 0 }}
+        {{ .Content }}
+    {{ else }}
+        <nav>
+            <ul class='list-vertical-navigation'>
+                {{ range .Page.RegularPages }}
+                    <li class='blog-main'>
+                        <a href='{{ .Page.RelPermalink }}'>
+                            <h3>{{ .Page.Title }}</h3>
+                        </a>
+                        <p class='blog-date'>{{ .Page.Date.Format "Monday, January 2, 2006" }}</p>
+                        <p>{{ .Page.Summary }} {{ if .Page.Truncated }}<a class='blog-readmore' href='{{ .Page.RelPermalink }}'>Read More...</a>{{ end }}</p>
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+    {{ end }}
+{{ end }}

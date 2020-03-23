@@ -1,0 +1,26 @@
+{{ define "styles" }}
+    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/textcontent.css" }}' />
+    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/blog.css" }}' />
+{{ end }}
+
+{{ define "main" }}
+    {{ if eq (len .Page.Pages) 0 }}
+        <section class='text-highlight'>
+            <h2>No Content Found!</h2>
+            <p>Sorry! Looks like it hasn't been expanded yet...</p>
+        </section>
+    {{ else }}
+        <nav>
+            <ul class='list-vertical-navigation'>
+                {{ range .Page.RegularPages }}
+                    <li class='blog-sub'>
+                        <a href='{{ .Page.RelPermalink }}'>
+                            <h3>{{ .Page.Title }}</h3>
+                        </a>
+                        <p class='blog-date'>{{ .Page.Date.Format "Monday, January 2, 2006" }}</p>
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+    {{ end }}
+{{ end }}
