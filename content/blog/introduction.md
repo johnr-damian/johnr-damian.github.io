@@ -15,9 +15,8 @@ title: Introduction
 Welcome! Welcome! Welcome to my blog — Algomorphogenesis!  
 This blog was created because I wanted to compile and to catalog topics that I found interesting.  
 Imagine seeing ASCII characters pouring like a liquid, a stroke of lines swaying like a tree, or a set of shapes moving like a flock of birds.  
-Isn't captivating to see such complex behaviors emerge from a simple set of rules?  
+Isn't amazing to see such complex behaviors emerge from a simple set of rules?  
 I found these fascinating when I was exploring projects to create for myself.  
-Then, my interest grew further when I saw the videos of Daniel Shiffman's Coding Train and Sebastian Lague's Coding Adventure.  
 As such, I created this blog as my coding journal while aiding me in cataloging these topics.  
 I hope that this blog would also be useful as a reference and inspire you to see the beauty in such complexities.  
 {{% /partition %}}
