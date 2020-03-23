@@ -6,6 +6,66 @@
     {{ if eq (len .Page.Pages) 0 }}
         {{ .Content }}
     {{ else }}
-        
+        {{ range .Page.RegularPages }}
+            <a href='{{ .Page.RelPermalink }}'>
+                {{ .Page.Title }}
+            </a>
+        {{ end }}
+        <br />
+        {{ range .Page.Pages }}
+            <a href='{{ .Page.RelPermalink }}'>
+                {{ .Page.Title }}
+            </a>
+        {{ end }}
+        <br />
+        {{ range .Page.Sections }}
+            <a href='{{ .Page.RelPermalink }}'>
+                {{ .Page.Title }}
+            </a>
+        {{ end }}
+        <br />
+        {{ range .Site.RegularPages }}
+            <a href='{{ .Page.RelPermalink }}'>
+                {{ .Page.Title }}
+            </a>
+        {{ end }}
+        <br />
+        {{ range .Site.Pages }}
+            <a href='{{ .Page.RelPermalink }}'>
+                {{ .Page.Title }}
+            </a>
+        {{ end }}
+        <br />
+        {{ range .Site.Sections }}
+            <a href='{{ .Page.RelPermalink }}'>
+                {{ .Page.Title }}
+            </a>
+        {{ end }}
+        <br />
+        <br />
+        {{ .Page.CurrentSection }}
+        <br />
+        {{ .Page.Parent }}
+        <br />
+        {{ range where .Site.RegularPages "Section" "eq" .Page.CurrentSection }}
+            <a href='{{ .Page.RelPermalink }}'>
+                {{ .Page.Title }} <br />
+                {{ .Page.Description }} <br />
+                {{ .Page.Summary }} <br />
+                {{ .Page.Date }} <br />
+                {{ .Page.ReadingTime }}
+            </a>
+        {{ end }}
+        <br />
+
+        {{ range .Page.RegularPages }}
+            <section class='blog-main'>
+                <a href='{{ .Page.RelPermalink }}'>
+                    <h3>{{ .Page.Title }}</h3>
+                </a>
+                <p>{{ .Page.Date.Format "Monday, January 2, 2006" }}</p>
+                <p>{{ .Page.Summary }} {{ if .Page.Truncated }}<a href='{{ .Page.RelPermalink }}'>Read More...</a>{{ end }}</p>
+            </section>
+        {{ end }}
     {{ end }}
 {{ end }}
