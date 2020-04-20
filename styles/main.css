@@ -51,6 +51,16 @@ canvas /*******/
     z-index: -1;
 }
 
+pre
+{
+    background-color: transparent;
+
+    display: block;
+    padding: 1vw;
+    margin: 0vw;
+    width: min-content;
+}
+
 figure
 {
     display: block;
