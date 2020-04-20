@@ -36,11 +36,6 @@
         {{ block "scripts" . }}
 
         {{ end }}
-        {{ with .Page.Params.scripts }}
-            {{ range . }}
-                <script type='text/javascript' src='{{ relURL . }}'></script>
-            {{ end }}
-        {{ end }}
     </head>
     <body>
         <header class='document_header'>
@@ -64,6 +59,11 @@
         <main class='document_main'>
             {{ block "main" . }}
 
+            {{ end }}
+            {{ with .Page.Params.scripts }}
+                {{ range . }}
+                    <script type='text/javascript' src='{{ relURL . }}'></script>
+                {{ end }}
             {{ end }}
         </main>
     </body>
