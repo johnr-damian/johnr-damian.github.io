@@ -7,7 +7,7 @@ categories: [academic]
 date: 2020-03-26T14:33:53+08:00
 #Page Description
 description: Creating a Slime Academic Journal in Blog Algomorphogenesis
-draft: false
+draft: true
 languages: [javascript, three.js]
 scripts: [scripts/blog/slime.js]
 three: true
