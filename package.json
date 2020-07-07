@@ -1,0 +1,28 @@
+{
+  "name": "johnr-damian.github.io",
+  "version": "2.0.0",
+  "description": "a simple blog and web portfolio",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "sass --watch assets/sass:static/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnr-damian/johnr-damian.github.io.git"
+  },
+  "keywords": [
+    "blog",
+    "portfolio",
+    "john rhey damian"
+  ],
+  "author": "John Rhey Damian",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/johnr-damian/johnr-damian.github.io/issues"
+  },
+  "homepage": "https://github.com/johnr-damian/johnr-damian.github.io#readme",
+  "devDependencies": {
+    "sass": "^1.26.9"
+  }
+}

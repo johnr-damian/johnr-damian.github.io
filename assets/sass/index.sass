@@ -1,0 +1,68 @@
+@use "main" as MAIN
+
+*
+    outline: 1px solid red
+    outline-offset: -1px
+
+html
+    @extend .element
+    height: 100%
+
+body
+    @extend .element
+    @include MAIN.createFlexDisplay(column)
+    height: 100%
+
+h1
+    @extend .element
+    font-family: MAIN.$primaryfontset
+    font-size: 3.5rem
+
+h2
+    @extend .element
+    font-family: MAIN.$primaryfontset
+    font-size: 3rem
+
+h3
+    @extend .element
+    font-family: MAIN.$primaryfontset
+    font-size: 2.5rem
+
+h4
+    @extend .element
+    font-family: MAIN.$secondaryfontset
+    font-size: 2rem
+
+p
+    @extend .element
+    font-family: MAIN.$secondaryfontset
+    font-size: 1.2rem
+
+a
+    @extend .element
+    display: inline-block
+    color: inherit
+    text-decoration: none
+
+    &:hover
+        text-decoration: underline
+
+.document_head
+    @extend .element
+    flex: 1
+
+    > nav
+        @extend .element
+        @include MAIN.createFlexDisplay(row, center)
+        align-items: center
+        @include MAIN.large_viewport()
+            justify-content: flex-end
+        height: 100%
+
+        > a
+            padding: 0.5rem 1rem
+            margin: 0px 1.5vw
+    
+.document_body
+    @extend .element
+    flex: 6
