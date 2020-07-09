@@ -29,10 +29,23 @@ params:
   description: a blog, and a web portfolio
   keywords: blog, web portfolio, john rhey damian, algomorphogenesis
   sociallinks:
-    codinggame: https://www.codingame.com/profile/10dbe4e05745fa81c2c372a7b891caec5389083
-    github: https://github.com/johnr-damian
-    gmail: johnr.damian98@gmail.com
-    linkedin: https://www.linkedin.com/in/johnr-damian/
+    -
+      icon: fas fa-code
+      link: https://www.codingame.com/profile/10dbe4e05745fa81c2c372a7b891caec5389083
+      name: codingame
+    -
+      icon: fab fa-github
+      link: https://github.com/johnr-damian
+      name: github
+    -
+      icon: fab fa-google
+      link: johnr.damian98@gmail.com
+      name: gmail
+    -
+      icon: fab fa-linkedin
+      link: https://www.linkedin.com/in/johnr-damian
+      name: linkedin
+  spotlight: images/Algomorphogenesis.jpg
 relativeURLs: true
 taxonomies:
   #What kind of content is being presented.
