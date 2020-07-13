@@ -6,6 +6,7 @@
 
 html
     @extend .element
+    font-size: calc(12px + 0.5vw)
     height: 100%
 
 body
@@ -17,26 +18,20 @@ h1
     @extend .element
     font-family: MAIN.$primaryfontset
     font-size: 3.5rem
+    font-weight: normal
 
 h2
-    @extend .element
-    font-family: MAIN.$primaryfontset
-    font-size: 3rem
-
-h3
-    @extend .element
-    font-family: MAIN.$primaryfontset
+    @extend h1
     font-size: 2.5rem
 
-h4
-    @extend .element
-    font-family: MAIN.$secondaryfontset
+h3
+    @extend h1
     font-size: 2rem
 
 p
     @extend .element
     font-family: MAIN.$secondaryfontset
-    font-size: 1.2rem
+    font-size: 1.3rem
 
 a
     @extend .element
@@ -46,6 +41,13 @@ a
 
     &:hover
         text-decoration: underline
+
+canvas
+    height: 100%
+    width: 100%
+
+figure
+    @extend .element
 
 .document_head
     @extend .element
@@ -66,3 +68,19 @@ a
 .document_body
     @extend .element
     flex: 6
+
+.simplecontent
+    @extend body
+
+    > .spotlight
+        height: 100%
+        width: 100%
+        position: fixed
+        z-index: -1
+
+    > .content
+        @extend body
+        align-items: center
+        justify-content: center
+        padding: 1vw 2vw 0vw
+        height: 100%
