@@ -57,7 +57,7 @@ figure
         @extend .element
         @include MAIN.createFlexDisplay(row, center)
         align-items: center
-        @include MAIN.large_viewport()
+        @include MAIN.large_viewport(1025px)
             justify-content: flex-end
         height: 100%
 
@@ -84,3 +84,21 @@ figure
         justify-content: center
         padding: 1vw 2vw 0vw
         height: 100%
+
+        > h1
+            margin: 40vh 0px 0px
+            @include MAIN.medium_viewport(800px, "max-height")
+                margin: 35vh 0px 0px
+            @include MAIN.special_viewport(1200px)
+                margin: 30vh 0px 0px   
+            @include MAIN.special_viewport(2560px, 634px)
+                margin: 25vh 0px 0px                     
+
+        > a
+            margin: 40vh 0px 5vh
+            @include MAIN.medium_viewport(800px, "max-height")
+                margin: 35vh 0px 5vh
+            @include MAIN.special_viewport(1200px)
+                margin: 30vh 0px 5vh
+            @include MAIN.special_viewport(2560px, 634px)
+                margin: 25vh 0px 5vh
