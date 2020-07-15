@@ -1,22 +1,25 @@
-{{ define "styles" }}
-    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/textcontent.css" }}' />
-{{ end }}
-
 {{ define "main" }}
-    {{ if eq (len .Page.Pages) 0 }}
-        {{ .Content }}
-    {{ else }}
-        <nav>
-            <ul class='list-horizontal-navigation list-horizontal-card'>
-                {{ range .Page.Pages }}
-                    <a href='{{ .Page.RelPermalink }}'>
-                        <figure>
-                            <img src='{{ relURL .Page.Params.project_image }}' />
-                        </figure>
-                        <li>{{ .Page.Title }}</li>
-                    </a>
+    <article class='simplecontent'>
+        {{ with .Page.Params.spotlight_type }}
+            <figure class='spotlight'>
+                {{ if eq . "canvas" }}
+                    <canvas id='spotlight'></canvas>
+                {{ else }}
+                    <img id='spotlight' src='{{ relURL $.Page.Params.spotlight }}' />
                 {{ end }}
-            </ul>
-        </nav>
+            </figure>
+        {{ end }}
+        <section class='content'>
+            {{ .Content }}
+        </section>
+    </article>
+{{ end }}
+{{ define "postscripts" }}
+    {{ with .Page.Params.spotlight_type }}
+        {{ if eq . "canvas" }}
+            {{ range $.Page.Params.spotlight }}
+                <script type='text/javascript' src='{{ relURL . }}'></script>
+            {{ end }}
+        {{ end }}
     {{ end }}
 {{ end }}

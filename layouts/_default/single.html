@@ -1,19 +1,25 @@
-{{ define "styles" }}
-    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/textcontent.css" }}' />
-    {{ with .Page.Params.project_image }}
-        <style type='text/css'>
-            main
-            {
-                background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)), url('{{ relURL . }}');
-                background-attachment: scroll;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-        </style>
-    {{ end }}
-{{ end }}
-
 {{ define "main" }}
-    {{ .Content }}
+    <article class='simplecontent'>
+        {{ with .Page.Params.spotlight_type }}
+            <figure class='spotlight'>
+                {{ if eq . "canvas" }}
+                    <canvas id='spotlight'></canvas>
+                {{ else }}
+                    <img id='spotlight' src='{{ relURL $.Page.Params.spotlight }}' />
+                {{ end }}
+            </figure>
+        {{ end }}
+        <section class='content'>
+            {{ .Content }}
+        </section>
+    </article>
+{{ end }}
+{{ define "postscripts" }}
+    {{ with .Page.Params.spotlight_type }}
+        {{ if eq . "canvas" }}
+            {{ range $.Page.Params.spotlight }}
+                <script type='text/javascript' src='{{ relURL . }}'></script>
+            {{ end }}
+        {{ end }}
+    {{ end }}
 {{ end }}

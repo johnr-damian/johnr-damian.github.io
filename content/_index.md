@@ -23,5 +23,5 @@ Hello, my name is John Rhey Damian!
 I'm a software developer who is passionate about learning new things.  
 I'm especially interested in artificial intelligence and creative coding.  
 {{< socials >}}
-{{% inpages link="#" direction="up" %}}
+{{% inpages link="#top" direction="up" type="special" %}}
 </section>

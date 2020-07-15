@@ -1,16 +1,20 @@
 ---
-#Plain Page
+#For Simple Document
 
 #Date Created
-date: 2020-03-04T19:48:39+08:00
-#Page Description
-description: Projects Algomorphogenesis — a blog, a journal, and a portfolio
+date: 2020-07-15T19:01:46+08:00
+description: Want to know about my skills? Check out the projects that I've created so far! This list contains academic and creative projects and concepts that I think fascinating and fun.
 draft: false
-#Page Title
+keywords: [web portfolio, john rhey damian, skills, projects]
+spotlight: [scripts/index.js]
+spotlight_type: canvas
 title: Projects
 ---
 
-{{% partition class="text-highlight" %}}  
-## Sorry!  
-It looks like I have nothing to show here... yet!  
-{{% /partition %}}
+<section>
+
+# Impossible!
+Perhaps the archives are incomplete...  
+  
+{{< inpages link="#back" direction="left" type="special" message="Go Back" >}}
+</section>

@@ -1,0 +1,6 @@
+<a {{ if (.Get "message") }}class='icon_button' {{ end }}href='{{ .Get "link" }}'{{ if (.Get "type") }} onclick='{{ if eq (.Get "link") "#top" }}document.getElementsByTagName("main")[0].scrollTop = 0;{{ else }}javascript:history.back();{{ end }}'{{ end }}>
+    <span class='fas fa-chevron-{{ .Get "direction" }}'></span>
+    {{ with (.Get "message") }}
+        <p>{{ . }}</p>
+    {{ end }}
+</a>

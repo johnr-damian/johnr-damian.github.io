@@ -1,10 +1,17 @@
-{{ define "styles" }}
-    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/textcontent.css" }}' />
-{{ end }}
-
 {{ define "main" }}
-    <section class='text-highlight'>
-        <h2>404</h2>
-        <p>Where are you going?</p>
-    </section>
+    <article class='simplecontent'>
+        <figure class='spotlight'>
+            <canvas id='spotlight'></canvas>
+        </figure>
+        <section class='content'>
+            <section>
+                <h1>404</h1>
+                <p>Hello there!</p>
+                <button type='button' onclick='javascript:history.back()'>Go Back</button>
+            </section>
+        </section>
+    </article>
+{{ end }}
+{{ define "postscripts" }}
+    <script type='text/javascript' src='{{ relURL "scripts/index.js" }}'></script>
 {{ end }}
