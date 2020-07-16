@@ -39,7 +39,7 @@ params:
       name: github
     -
       icon: fab fa-google
-      link: johnr.damian98@gmail.com
+      link: mailto:johnr.damian98@gmail.com?subject=WebPortfolio
       name: gmail
     -
       icon: fab fa-linkedin

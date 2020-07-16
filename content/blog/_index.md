@@ -15,5 +15,8 @@ title: Blog
 
 # Who hasn't learned anything new?
 Well, of course, I know him. He's me.  
-{{< inpages link="#back" direction="left" type="special" message="Go Back" >}}
+  
+{{< inpages type="button" icon="fa-chevron-left" content="Go Back" >}}
+    javascript:history.back();
+{{< /inpages >}}
 </section>

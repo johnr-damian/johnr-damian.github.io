@@ -16,5 +16,7 @@ title: Projects
 # Impossible!
 Perhaps the archives are incomplete...  
   
-{{< inpages link="#back" direction="left" type="special" message="Go Back" >}}
+{{< inpages type="button" icon="fa-chevron-left" content="Go Back" >}}
+    javascript:history.back();
+{{< /inpages >}}
 </section>
