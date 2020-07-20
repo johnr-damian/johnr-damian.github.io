@@ -9,9 +9,22 @@
                 {{ end }}
             </figure>
         {{ end }}
-        <section class='content'>
-            {{ .Content }}
-        </section>
+        {{ if eq (len .Page.Pages) 0 }}
+            <section class='content'>
+                {{ .Content }}
+            </section>
+        {{ else }}
+            <nav class='list'>
+                {{ range .Page.Pages }}
+                    <a class='preview-button' href='{{ .Page.RelPermalink }}'>
+                        <figure>
+                            <img src='{{ relURL .Page.Params.spotlight }}' />
+                            <figcaption><p>{{ .Page.Title }}</p></figcaption>
+                        </figure>
+                    </a>
+                {{ end }}
+            </nav>
+        {{ end }}
     </article>
 {{ end }}
 {{ define "postscripts" }}

@@ -18,9 +18,17 @@ topics: [c++, c#, r, python, artificial intelligence, starcraft 2]
 # KoKeKoKo
 John Rhey Damian, Anngelo Rommel Guanga, Gabriel Kristoffer Salido  
   
-{{< inpages type="anchor" icon="fa-chevron-down" >}}
-    {{< relref "#description" >}}
-{{< /inpages >}}
+<span class='social_navigation'>
+    <a class='icon_button' href='https://github.com/johnr-damian/KoKeKoKo'>
+        <span class='fas fa-code-branch'></span>
+        <p>View Repository</p>
+    </a>
+</span>
+  
+<span>
+
+[<span class='fas fa-chevron-down'></span>](#description)
+</span>
 </section>
 
 <section>
@@ -29,10 +37,12 @@ John Rhey Damian, Anngelo Rommel Guanga, Gabriel Kristoffer Salido
 A StarCraft II bot that uses the Monte Carlo Tree Search (MCTS) algorithm to manage the Micro and Macro tasks of the game.
 John Rhey Damian, Anngelo Rommel Guanga, and Gabriel Kristoffer developed the bot as their thesis for BS Computer Science.  
   
-KoKeKoKo uses s2client-api, a C++ library, for bot control while connected to a C# console for the implementation of artificial intelligence.
+<br />
+  
+KoKeKoKo uses [s2client-api](https://github.com/Blizzard/s2client-api), a C++ library, for bot control while connected to a C# console for the implementation of artificial intelligence.
 The artificial intelligence uses Monte Carlo Tree Search (MCTS) algorithm through the help of the R engine and the extracted data using Python.  
   
-{{< inpages type="button" icon="fa-chevron-up" >}}
-    "document.getElementsByTagName("main")[0].scrollTop = 0;
-{{< /inpages >}}
+<button type='button' onclick='GoToTop()'>
+    <span class='fas fa-chevron-up'></span>
+</button>
 </section>

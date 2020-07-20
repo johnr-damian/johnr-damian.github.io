@@ -18,9 +18,17 @@ topics: [css, hugo, html, javascript, sass, static web pages]
 # Algomorphogenesis
 John Rhey Damian  
   
-{{< inpages type="anchor" icon="fa-chevron-down" >}}
-    {{< relref "#description" >}}
-{{< /inpages >}}
+<span class='social_navigation'>
+    <a class='icon_button' href='https://github.com/johnr-damian/johnr-damian.github.io'>
+        <span class='fas fa-code-branch'></span>
+        <p>View Repository</p>
+    </a>
+</span>
+  
+<span>
+
+[<span class='fas fa-chevron-down'></span>](#description)
+</span>
 </section>
 
 <section>
@@ -31,7 +39,7 @@ This website is a static site generated with Hugo to serve as my journal, as wel
 Initially, this project started as a compilation of javascript files as I learn more about creative coding and web development. 
 Then, the web portfolio combined with this project since I'll have to show my progress as a developer.  
   
-{{< inpages type="button" icon="fa-chevron-up" >}}
-    "document.getElementsByTagName("main")[0].scrollTop = 0;
-{{< /inpages >}}
+<button type='button' onclick='GoToTop()'>
+    <span class='fas fa-chevron-up'></span>
+</button>
 </section>
