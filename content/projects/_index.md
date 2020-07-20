@@ -16,7 +16,8 @@ title: Projects
 # Impossible!
 Perhaps the archives are incomplete...  
   
-{{< inpages type="button" icon="fa-chevron-left" content="Go Back" >}}
-    javascript:history.back();
-{{< /inpages >}}
+<button type='button' onclick='javascript:history.back()'>
+    <span class='fas fa-chevron-left'></span>
+    <p>Go Back</p>
+</button>
 </section>

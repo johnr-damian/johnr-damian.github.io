@@ -13,9 +13,10 @@ spotlight_type: canvas
 # Hello World!
 John Rhey Damian  
   
-{{< inpages type="anchor" icon="fa-chevron-down" >}}
-    {{< relref "#about" >}}
-{{< /inpages >}}
+<span>
+
+[<span class='fas fa-chevron-down'></span>](#about)
+</span>
 </section>
 
 <section>
@@ -25,7 +26,7 @@ Hello, my name is John Rhey Damian!
 I'm a software developer who is passionate about learning new things.  
 I'm especially interested in artificial intelligence and creative coding.  
 {{< socials >}}
-{{< inpages type="button" icon="fa-chevron-up" >}}
-    "document.getElementsByTagName("main")[0].scrollTop = 0;
-{{< /inpages >}}
+<button type='button' onclick='GoToTop()'>
+    <span class='fas fa-chevron-up'></span>
+</button>
 </section>

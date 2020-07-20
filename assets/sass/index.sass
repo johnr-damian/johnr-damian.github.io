@@ -19,6 +19,7 @@ h1
     font-family: MAIN.$primaryfontset
     font-size: 3.5rem
     font-weight: normal
+    line-height: 4rem
 
 h2
     @extend h1
@@ -32,6 +33,9 @@ p
     @extend .element
     font-family: MAIN.$secondaryfontset
     font-size: 1.3rem
+    line-height: 1.5rem
+    word-break: keep-all
+    max-width: 75ch
 
 a
     @extend .element
@@ -42,8 +46,21 @@ a
     &:hover
         text-decoration: underline
 
+figcaption
+    @extend .element
+
 button
-    @extend .button
+    @extend .element
+    @extend p
+    @include MAIN.createFlexDisplay()
+    align-items: center
+    cursor: pointer
+    background-color: transparent
+    border: none
+
+    > p
+        margin: 0px 0px 0px 0.5rem
+
 
 canvas
     height: 100%
@@ -115,5 +132,22 @@ figure
             justify-content: center
             text-align: center
 
-            > a
+            > span > p > a, button
                 margin: 8vw 0px 0px
+
+    > .list
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-rows: repeat(3, 1fr)
+        gap: 1vw 1vw
+        padding: 1vw 2vw 0vw
+        height: 100%
+
+.preview-button
+    text-align: center
+    box-shadow: 0.4vw 0.4vw 0.5rem rgba(0, 0, 0, 0.50)
+
+    > figure > img
+        object-fit: cover
+        height: 100%
+        width: 100%
