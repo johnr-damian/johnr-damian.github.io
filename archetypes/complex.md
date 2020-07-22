@@ -9,6 +9,6 @@ draft: true
 keywords: null
 spotlight: null
 spotlight_type: image
-title: {{ title (replace .File.TranslationBaseName '-' ' ') }}
+title: {{ replace (title .File.TranslationBaseName) "-" " " }}
 topics: null
 ---

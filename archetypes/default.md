@@ -8,5 +8,5 @@ draft: true
 keywords: null
 spotlight: null
 spotlight_type: canvas
-title: {{ title (replace .File.TranslationBaseName '-' ' ') }}
+title: {{ replace (title .File.TranslationBaseName) "-" " " }}
 ---

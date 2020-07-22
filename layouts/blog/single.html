@@ -1,34 +1,72 @@
-{{ define "styles" }}
-    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/textcontent.css" }}' />
-    <link type='text/css' rel='stylesheet' href='{{ relURL "styles/blog.css" }}' />
-{{ end }}
-
 {{ define "main" }}
-    <article>
-        <h2>{{ .Page.Title }}</h2>
-        <p class='blog-date'>{{ .Page.Date.Format "Monday, January 2, 2006" }}</p>
-        <ul class='blog-tags list-horizontal-navigation'>
-            {{ range (.GetTerms "categories") }}
-                <a href='{{ .RelPermalink }}'>
-                    <li>{{ .Page.LinkTitle }}</li>
-                </a>
-            {{ end }}
-            {{ range (.GetTerms "areas") }}
-                <a href='{{ .RelPermalink }}'>
-                    <li>{{ .Page.LinkTitle }}</li>
-                </a>
-            {{ end }}
-            {{ range (.GetTerms "languages") }}
-                <a href='{{ .RelPermalink }}'>
-                    <li>{{ .Page.LinkTitle }}</li>
-                </a>
-            {{ end }}
-            {{ range (.GetTerms "series") }}
-                <a href='{{ .RelPermalink }}'>
-                    <li>{{ .Page.LinkTitle }}</li>
-                </a>
-            {{ end }}
-        </ul>
-        {{ .Content }}
-    </article>
+    <section class='complexcontent'>
+        <article class='content'>
+            <header>
+                {{ if ne .Page.Params.spotlight "images/noimage.jpg" }}
+                    <figure>
+                        <img src='{{ relURL .Page.Params.spotlight }}' />
+                    </figure>
+                {{ end }}
+                <section class='introduction'>
+                    <h1>{{ .Page.Title }}</h1>
+                    <p>{{ .Page.Date.Format "Monday, January 2, 2006" }}</p>
+                </section>
+                <nav class='tags'>
+                    {{ range (.GetTerms "categories") }}
+
+                    {{ end }}
+                </nav>
+                <ul>
+                    {{ range (.GetTerms "categories") }}
+                        <li>{{ .Page.LinkTitle }}</li>
+                    {{ end }}
+                    {{range (.GetTerms "topics") }}
+                        <li>{{ .Page.LinkTitle }}</li>
+                    {{ end }}
+                </ul>
+            </header>
+            <section class='body'>
+                {{ .Content }}
+            </section>
+        </article>
+        <aside class='side'>
+            <ul class='tags'>
+                {{ with .Site.RegularPages.Related . | first 5 }}
+                    <li class='related-tags'>
+                        <h3>See Also</h3>
+                        <ol>
+                            {{ range . }}
+                                <li>
+                                    <a href='{{ .RelPermalink }}'>
+                                        <p>{{ .Title }}</p>
+                                    </a>
+                                </li>
+                            {{ end }}
+                        </ol>
+                    </li>
+                {{ end }}
+                {{ range $pluralkey, $pluralvalue := .Site.Taxonomies }}
+                    <li class='normal-tags'>
+                        <p>{{ title $pluralkey }}</p>
+                        <ul>
+                            {{ range $singularkey, $singularvalue := $pluralvalue }}
+                                <li>
+                                    <a href='{{ $singularvalue.Page.Permalink }}'>
+                                        <p>{{ replace (title $singularkey) "-" " " }}</p>
+                                    </a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    </li>
+                {{ end }}
+            </ul>
+        </aside>
+    </section>
+{{ end }}
+{{ define "postscripts" }}
+    {{ with .Page.Params.scripts }}
+        {{ range . }}
+            <script type='text/javascript' src='{{ relURL . }}'></script>
+        {{ end }}
+    {{ end }}
 {{ end }}

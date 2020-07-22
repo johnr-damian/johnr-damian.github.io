@@ -1,15 +1,13 @@
 {{ define "main" }}
-    <article class='simplecontent'>
+    <section class='simplecontent'>
         {{ with .Page.Params.spotlight_type }}
-            <figure class='spotlight'>
-                {{ if eq . "canvas" }}
+            {{ if eq . "canvas" }}
+                <figure class='spotlight'>
                     <canvas id='spotlight'></canvas>
-                {{ else }}
-                    <img id='spotlight' src='{{ relURL $.Page.Params.spotlight }}' />
-                {{ end }}
-            </figure>
+                </figure>
+            {{ end }}
         {{ end }}
-        {{ if eq (len .Page.Pages) 0 }}
+        {{ if eq (len .Page.RegularPages) 0 }}
             <section class='content'>
                 {{ .Content }}
             </section>
@@ -25,7 +23,7 @@
                 {{ end }}
             </nav>
         {{ end }}
-    </article>
+    </section>
 {{ end }}
 {{ define "postscripts" }}
     {{ with .Page.Params.spotlight_type }}
