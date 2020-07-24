@@ -9,21 +9,20 @@
                 {{ end }}
                 <section class='introduction'>
                     <h1>{{ .Page.Title }}</h1>
-                    <p>{{ .Page.Date.Format "Monday, January 2, 2006" }}</p>
+                    <p>&nbsp;&bull; {{ .Page.Date.Format "Monday, January 2, 2006" }}</p>
                 </section>
                 <nav class='tags'>
                     {{ range (.GetTerms "categories") }}
-
+                        <a class='tag-button' href='{{ .Permalink }}'>
+                            <p>{{ .LinkTitle }}</p>
+                        </a>
+                    {{ end }}
+                    {{ range (.GetTerms "topics") }}
+                        <a class='tag-button' href='{{ .Permalink }}'>
+                            <p>{{ .LinkTitle }}</p>
+                        </a>
                     {{ end }}
                 </nav>
-                <ul>
-                    {{ range (.GetTerms "categories") }}
-                        <li>{{ .Page.LinkTitle }}</li>
-                    {{ end }}
-                    {{range (.GetTerms "topics") }}
-                        <li>{{ .Page.LinkTitle }}</li>
-                    {{ end }}
-                </ul>
             </header>
             <section class='body'>
                 {{ .Content }}
@@ -47,12 +46,12 @@
                 {{ end }}
                 {{ range $pluralkey, $pluralvalue := .Site.Taxonomies }}
                     <li class='normal-tags'>
-                        <p>{{ title $pluralkey }}</p>
+                        <p>{{ title $pluralkey }} <span class='fas fa-caret-right unexpanded'></span><span class='fas fa-caret-down expanded'></span></p>
                         <ul>
                             {{ range $singularkey, $singularvalue := $pluralvalue }}
                                 <li>
                                     <a href='{{ $singularvalue.Page.Permalink }}'>
-                                        <p>{{ replace (title $singularkey) "-" " " }}</p>
+                                        <p>{{ replace (title $singularkey) "-" " " }} <span class='pages'>({{ len $singularvalue.Pages }})</span></p>
                                     </a>
                                 </li>
                             {{ end }}

@@ -35,7 +35,7 @@ John Rhey Damian
 
 ## Description
 
-This website is a static site generated with Hugo to serve as my journal, as well as my web portfolio. 
+This website is a static site generated with [Hugo](https://github.com/gohugoio/hugo) to serve as my journal, as well as my web portfolio. 
 Initially, this project started as a compilation of javascript files as I learn more about creative coding and web development. 
 Then, the web portfolio combined with this project since I'll have to show my progress as a developer.  
   
