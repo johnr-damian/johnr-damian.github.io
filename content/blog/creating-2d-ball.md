@@ -1,48 +1,21 @@
 ---
 #Academic Journal
 
-areas: [2D, physics]
-categories: [academic]
+categories: [academic, journal]
 #Date Created
 date: 2020-04-12T17:10:00+08:00
 #Page Description
 description: Creating a 2D Ball Journal in Blog Algomorphogenesis
 draft: false
-languages: [javascript, three.js]
+topics: [javascript, three.js, 2D, physics]
 scripts: [scripts/blog/simpleball.js]
-three: true
 #Page Title
 title: A simple 2D Ball using Three.js
+spotlight: images/noimage.jpg
+spotlight_type: image
 ---
-{{% partition class="text-content" %}}
-```
+<section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
-{{% /partition %}}
-{{% partition class="text-content" %}}
 In today's journal, I created a simple 2D ball using Three.js as an introduction for myself in using this Javascript library.  
 Coming from p5.js, it is undeniable that there are a lot of good tutorials on how to use it.  
 However, this time I would like to use Three.js for creative coding as an exploration and out of my curiosity.  
@@ -53,7 +26,18 @@ To give you an example, you would only need two functions to start in p5.js — 
 Simple right? The canvas' configuration is in the `setup()`, while the main animation loop is in the `draw()`.  
 On the other hand, you'll need to program additional lines of code as a setup in Three.js.  
 Now that you know a little better on what to expect, I'll be showing you how I started in Three.js.  
-  
+</section>
+
+<!-- <section>
+
+Let's start with a simple piece of code. We have a variable, and a class called *environment*.  
+The variable serves as a reference when we want to start the animation later on.  
+You could think of it as manually calling the `setup()` of p5.js. Call it once, and the configuration is complete.  
+If you're wondering why it is not the drawing function, it is because we have to state the drawing function either through `window.requestAnimationFrame()` or `setAnimationLoop()`.  
+</section> -->
+
+<section>
+
 ### Getting Started  
 Let's start with a simple piece of code. We have a variable, and a class called *environment*.  
 The variable serves as a reference when we want to start the animation later on.  
@@ -142,7 +126,10 @@ class Environment
 
 environment = new Environment();
 ```
+</section>
   
+<section>
+
 ### Getting the Details  
 At this point, you'll maybe need to take a glance at the documentation of Three.js  
 I'll be summarizing what I have done and on the requirements of each object.  
@@ -241,7 +228,10 @@ Render()
 environment = new Environment();
 environment.Play();
 ```
+</section>
   
+<section>
+
 ### Where's the ball?  
 To wrap our Environment class, the camera's projection and renderer will update in `OnResized()` function.  
 As for the ball, we add a reference to it by adding a new variable in the constructor.  
@@ -431,8 +421,10 @@ Additionally, my writing greatly requires improvement, including how I program s
 in javascript.  
 If perchance this journal was able to aid you, then I would be happy.  
 What do you think about this journal?  
-{{% /partition %}}
-{{% partition class="text-content" %}}
+</section>
+  
+<section>
+
 ### Full Code
 ```js
 let environment = null;
@@ -605,4 +597,10 @@ class Ball
 environment = new Environment();
 environment.Play();
 ```
-{{% /partition %}}
+</section>
+<figure>
+    <canvas id='result'></canvas>
+</figure>
+<button type='button' onclick='GoToTop()'>
+    <span class='fas fa-chevron-up'></span>
+</button>

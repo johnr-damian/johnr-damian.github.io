@@ -31,9 +31,9 @@
         <aside class='side'>
             <ul class='tags'>
                 {{ with .Site.RegularPages.Related . | first 5 }}
-                    <li class='related-tags'>
-                        <h3>See Also</h3>
-                        <ol>
+                    <li class='normal-tags'>
+                        <p>See Also <span class='fas fa-caret-right unexpanded'></span><span class='fas fa-caret-down expanded'></span></p>
+                        <ul>
                             {{ range . }}
                                 <li>
                                     <a href='{{ .RelPermalink }}'>
@@ -41,7 +41,7 @@
                                     </a>
                                 </li>
                             {{ end }}
-                        </ol>
+                        </ul>
                     </li>
                 {{ end }}
                 {{ range $pluralkey, $pluralvalue := .Site.Taxonomies }}

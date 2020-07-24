@@ -19,11 +19,14 @@ class Environment
         this.Scene = new THREE.Scene();
 
         //Create the Renderer
+        let figure = document.getElementsByTagName("figure")[0];
+        let hcanvas = document.getElementById("result");
         this.Renderer = new THREE.WebGLRenderer({
             alpha: true,
-            antialias: true
+            antialias: true,
+            canvas: hcanvas
         });
-        this.Renderer.setSize(window.innerWidth, window.innerHeight);
+        this.Renderer.setSize(figure.clientWidth, figure.clientHeight);
 
         //Create the Bounding Box
         let geometry = new THREE.BoxGeometry(28, 8, 1);
@@ -44,7 +47,7 @@ class Environment
         this.Scene.add(this.Ball.Mesh);
 
         //Add the Canvas to the HTML
-        document.body.appendChild(this.Renderer.domElement);
+        // document.body.appendChild(this.Renderer.domElement);
         window.addEventListener("resize", this.OnResized.bind(this));
     }
 

@@ -37,6 +37,12 @@ p
     word-break: keep-all
     max-width: 75ch
 
+code
+    @extend .element
+    display: inline-block
+    font-size: 1rem
+    font-weight: bolder
+
 a
     @extend .element
     display: inline-block
@@ -68,6 +74,15 @@ button
 canvas
     height: 100%
     width: 100%
+
+pre
+    @extend .element
+    overflow: auto
+    width: 50rem
+    height: 24rem
+    margin: auto
+    padding: 1vw
+
 
 figure
     @extend .element
@@ -158,7 +173,7 @@ figure
 .complexcontent
     @extend .element
     @include MAIN.createFlexDisplay()
-    height: 100%
+    // height: 100%
     flex-wrap: wrap-reverse
 
     > .side
@@ -177,10 +192,28 @@ figure
         padding: 1vw 2vw 0px
 
         > header
-            flex: 2
+            @include MAIN.createFlexDisplay(column)            
+            margin: 0px 0px 1rem
+            > .tags
+                flex-direction: row
+                margin: 0.5rem 0px 0px
+                
+                > .tag-button
+                    margin: 0px 1vw 0px 0px
+                    border-radius: 0px
 
         > .body
+            @include MAIN.createFlexDisplay(column)
             flex: 4
+
+            > section
+                margin: 0px 0px 1rem
+
+                > .highlight
+                    margin: 0.5rem 0px
+
+            > button
+                align-self: center
 
     > .list
         @include MAIN.createFlexDisplay(column)
