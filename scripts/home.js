@@ -4,16 +4,22 @@ class Environment
 {
     constructor()
     {
-        this.Camera = new THREE.PerspectiveCamera(60, (window.innerWidth / window.innerHeight), 1, 10);
+        let figure = document.getElementsByTagName("figure")[0];
+        this.Camera = new THREE.PerspectiveCamera(60, (figure.clientWidth / figure.clientHeight), 1, 10);
         this.Camera.position.set(0, 0, 5);
-        //Create a Renderer
-        this.Renderer = new THREE.WebGLRenderer();
-        this.Renderer.setSize(window.innerWidth, window.innerHeight);
+        //Create a Renderer        
+        let hcanvas = document.getElementById("spotlight");
+        this.Renderer = new THREE.WebGLRenderer({
+            alpha: true,
+            antialias: true,
+            canvas: hcanvas
+        });
+        this.Renderer.setSize(figure.clientWidth, figure.clientHeight);
         //Create a Scene
         this.Scene = new THREE.Scene();
         this.Scene.background = new THREE.Color(0xffffff);
         
-        document.body.appendChild(this.Renderer.domElement);
+        // document.body.appendChild(this.Renderer.domElement);
         window.addEventListener("resize", this.OnResized.bind(this));
         this.Cube = null;
     }
@@ -65,9 +71,10 @@ class Environment
 
     OnResized()
     {
-        this.Camera.aspect = (window.innerWidth / window.innerHeight);
+        let figure = document.getElementsByTagName("figure")[0];
+        this.Camera.aspect = (figure.clientWidth / figure.clientHeight);
         this.Camera.updateProjectionMatrix();
-        this.Renderer.setSize(window.innerWidth, window.innerHeight);
+        this.Renderer.setSize(figure.clientWidth, figure.clientHeight);
     }
 }
 

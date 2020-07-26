@@ -1,0 +1,15 @@
+.element {
+  display: block;
+  padding: 0px;
+  margin: 0px;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  padding: 0.5vw 1vw;
+  margin: 0px 1vw;
+}
+
+/*# sourceMappingURL=main.css.map */
