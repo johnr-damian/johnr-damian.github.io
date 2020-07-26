@@ -74,7 +74,7 @@ class Environment
         let figure = document.getElementsByTagName("figure")[0];
         this.Camera.aspect = (figure.clientWidth / figure.clientHeight);
         this.Camera.updateProjectionMatrix();
-        this.Renderer.setSize(figure.clientWidth / figure.clientHeight);
+        this.Renderer.setSize(figure.clientWidth, figure.clientHeight);
     }
 }
 

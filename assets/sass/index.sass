@@ -1,8 +1,8 @@
 @use "main" as MAIN
 
-*
-    outline: 1px solid red
-    outline-offset: -1px
+// *
+//     outline: 1px solid red
+//     outline-offset: -1px
 
 html
     @extend .element
@@ -78,11 +78,11 @@ canvas
 pre
     @extend .element
     overflow: auto
-    width: 50rem
+    min-width: 12rem
+    max-width: 50rem
     height: 24rem
-    margin: auto
     padding: 1vw
-
+    margin: auto
 
 figure
     @extend .element
@@ -194,9 +194,10 @@ figure
         @include MAIN.createFlexDisplay(column)
         flex: 4
         padding: 1vw 2vw 0px
+        width: 100%
 
         > header
-            @include MAIN.createFlexDisplay(column)            
+            @include MAIN.createFlexDisplay(column)
             margin: 0px 0px 1rem
             > .tags
                 flex-direction: row
@@ -301,3 +302,10 @@ figure
     > p
         font-size: 0.8rem
         padding: 0px
+
+.introduction
+    @include MAIN.createFlexDisplay()
+    flex-wrap: wrap
+    
+    > h1
+        min-width: min-content
