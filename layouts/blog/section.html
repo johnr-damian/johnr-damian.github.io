@@ -1,12 +1,12 @@
 {{ define "main" }}
-    <section class='complexcontent'>
-        {{ with .Page.Params.spotlight_type }}
-            {{ if eq . "canvas" }}
-                <figure class='spotlight'>
-                    <canvas id='spotlight'></canvas>
-                </figure>
-            {{ end }}
+    {{ with .Page.Params.spotlight_type }}
+        {{ if eq . "canvas" }}
+            <figure class='spotlight'>
+                <canvas id='spotlight'></canvas>
+            </figure>
         {{ end }}
+    {{ end }}
+    <section class='complexcontent'>
         {{ if eq (len .Page.RegularPages) 0 }}
             <section class='content'>
                 {{ .Content }}

@@ -154,12 +154,17 @@ figure
                 margin: 8vw 0px 0px
 
     > .list
-        display: grid
-        grid-template-columns: repeat(4, 1fr)
-        grid-template-rows: repeat(3, 1fr)
-        gap: 1vw 1vw
+        @include MAIN.createFlexDisplay()
+        flex-wrap: wrap
         padding: 1vw 2vw 0vw
         height: 100%
+
+        > .preview-button
+            min-width: 12rem
+            width: 30%
+            height: min-content
+            margin: 0.5vw 1vw
+        
 
 .preview-button
     text-align: center
@@ -170,21 +175,20 @@ figure
         height: 100%
         width: 100%
 
+.spotlight
+    height: 100%
+    width: 100%
+    position: fixed
+    z-index: -1
+
 .complexcontent
     @extend .element
     @include MAIN.createFlexDisplay()
-    // height: 100%
     flex-wrap: wrap-reverse
 
     > .side
         flex: 1
         padding: 1vw 2vw 0px
-
-    > .spotlight
-        height: 100%
-        width: 100%
-        position: fixed
-        z-index: -1
 
     > .content
         @include MAIN.createFlexDisplay(column)

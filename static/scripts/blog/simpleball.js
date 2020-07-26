@@ -12,14 +12,14 @@ class Environment
     constructor()
     {
         //Create the Camera
-        this.Camera = new THREE.PerspectiveCamera(45, (window.innerWidth / window.innerHeight), 1, 20);
+        let figure = document.getElementsByTagName("figure")[0];
+        this.Camera = new THREE.PerspectiveCamera(45, (figure.clientWidth / figure.clientHeight), 1, 20);
         this.Camera.position.set(0, 0, 20); //Move Camera to the back
         
         //Create the Scene
         this.Scene = new THREE.Scene();
 
-        //Create the Renderer
-        let figure = document.getElementsByTagName("figure")[0];
+        //Create the Renderer        
         let hcanvas = document.getElementById("result");
         this.Renderer = new THREE.WebGLRenderer({
             alpha: true,
@@ -31,7 +31,7 @@ class Environment
         //Create the Bounding Box
         let geometry = new THREE.BoxGeometry(28, 8, 1);
         let material = new THREE.MeshBasicMaterial({
-            color: 0x20ff20
+            color: 0xf0f5af
         });
         this.ReferenceBox = new THREE.Mesh(geometry, material);
         this.ReferenceBox.position.set(0, -2, 0);
@@ -87,9 +87,10 @@ class Environment
      */
     OnResized()
     {
-        this.Camera.aspect = (window.innerWidth / window.innerHeight);
+        let figure = document.getElementsByTagName("figure")[0];
+        this.Camera.aspect = (figure.clientWidth / figure.clientHeight)
         this.Camera.updateProjectionMatrix();
-        this.Renderer.setSize(window.innerWidth, window.innerHeight);
+        this.Renderer.setSize(figure.clientWidth / figure.clientHeight)
     }
 }
 
