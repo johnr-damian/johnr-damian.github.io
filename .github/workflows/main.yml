@@ -28,7 +28,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Compile SASS
-        run: nom run compile
+        run: npm run compile
       - name: Compile Hugo
         run: hugo --gc --minify --cleanDestinationDir
       - name: Deploy Hugo
