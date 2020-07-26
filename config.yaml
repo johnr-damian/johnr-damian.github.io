@@ -45,7 +45,7 @@ params:
       icon: fab fa-linkedin
       link: https://www.linkedin.com/in/johnr-damian
       name: linkedin
-  spotlight: images/Algomorphogenesis.jpg
+  spotlight: images/algomorphogenesis.jpg
 relativeURLs: true
 taxonomies:
   #What kind of content is being presented.
