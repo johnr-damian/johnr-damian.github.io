@@ -2,69 +2,58 @@
 
 <html lang='en-US'>
     <head>
-        <base href='{{ .Site.BaseURL }}' />
+        <!-- Basic Metatags -->
         <meta charset='utf-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta http-equiv='x-ua-compatible' content='ie=edge, chrome=1' />
         <meta name='author' content='{{ .Site.Params.author }}' />
         <meta name='description' content='{{ default .Site.Params.description .Page.Description }}' />
-        <meta name='keywords' content='blog, portofolio, john rhey damian' />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta name='keywords' content='{{ default .Site.Params.keywords .Page.Keywords }}' />
         {{ hugo.Generator }}
+
+        <!-- Social Metatags -->
+        <meta property='og:site_name' content='{{ .Site.Title }}' />
+        <meta property='og:title' content='{{ default .Site.Title .Page.Title }}' />
+        <meta property='og:description' content='{{ default .Site.Params.description .Page.Description }}' />
+        <meta property='og:image' content='{{ if eq .Page.Params.spotlight_type "image"}}{{ absURL .Page.Params.spotlight }}{{ else }}{{ absURL .Site.Params.spotlight }}{{ end }}' />
+        <meta property='og:type' content='website' />
+        
         <title>{{ with .Page.Title }}{{ . }} | {{ end }}{{ .Site.Title }}</title>
 
         <!-- Stylesheets -->
-        <link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cormorant+Garamond|Montserrat&display=swap' />
-        <link type='text/css' rel='stylesheet' href='{{ relURL "styles/main.css" }}' />
-        <link type='text/css' rel='stylesheet' href='{{ relURL "styles/special.css" }}' />
-        {{ block "styles" . }}
+        <link type='text/css' rel='stylesheet' href='https://fonts.googleapis.com/css2?family=EB+Garamond&family=Quicksand&display=swap' />
+        <link type='text/css' rel='stylesheet' href='{{ relURL "css/index.css" }}' />
+        {{ block "stylesheets" . }}
 
-        {{ end }}
-        {{ with .Page.Params.styles }}
-            {{ range . }}
-                <link type='text/css' rel='stylesheet' href='{{ relURL . }}' />
-            {{ end }}
         {{ end }}
 
         <!-- Scripts -->
-        <script src="https://kit.fontawesome.com/bc78188a33.js" crossorigin="anonymous"></script>
-        {{ with .Page.Params.d3 }}
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.min.js" integrity="sha256-m0QmIsBXcOMiETRmpT3qg2IQ/i0qazJA2miCHzOmS1Y=" crossorigin="anonymous"></script>
-        {{ end }}
-        {{ with .Page.Params.three }}
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js' integrity='sha256-gSh8eotzb/CVvCREGPUNgIWuDnTYnZvVOQnRrP1eDjI=' crossorigin='anonymous'></script>
-        {{ end }}
-        {{ block "scripts" . }}
+        <script src='https://kit.fontawesome.com/bc78188a33.js' crossorigin='anonymous'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.min.js' integrity='sha256-m0QmIsBXcOMiETRmpT3qg2IQ/i0qazJA2miCHzOmS1Y=' crossorigin='anonymous'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js' integrity='sha256-gSh8eotzb/CVvCREGPUNgIWuDnTYnZvVOQnRrP1eDjI=' crossorigin='anonymous'></script>
+        <script type='text/javascript' src='{{ relURL "scripts/main.js" }}'></script>
+        {{ block "prescripts" . }}
 
         {{ end }}
     </head>
     <body>
-        <header class='document_header'>
-            <a href='{{ .Site.BaseURL }}' class='document_title'>
-                <h1>{{ .Site.Title }}</h1>
-            </a>
+        <header class='document_head'>
             <nav class='document_navigation'>
-                <ul class='list-horizontal-navigation'>
-                    <a href='{{ relURL "about" }}'>
-                        <li>About</li>
+                {{ range .Site.Menus.index }}
+                    <a href='{{ .URL }}'>
+                        <p>{{ .Name }}</p>
                     </a>
-                    <a href='{{ relURL "blog" }}'>
-                        <li>Blog</li>
-                    </a>
-                    <a href='{{ relURL "projects" }}'>
-                        <li>Projects</li>
-                    </a>
-                </ul>
+                {{ end }}
             </nav>
         </header>
-        <main class='document_main'>
+        <main class='document_body'>
             {{ block "main" . }}
 
             {{ end }}
-            {{ with .Page.Params.scripts }}
-                {{ range . }}
-                    <script type='text/javascript' src='{{ relURL . }}'></script>
-                {{ end }}
-            {{ end }}
         </main>
+        <!-- Scripts -->
+        {{ block "postscripts" . }}
+
+        {{ end }}
     </body>
 </html>

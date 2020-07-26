@@ -1,21 +1,55 @@
 baseURL: https://johnr-damian.github.io
+defaultContentLanguage: en-US
+hasCJKLanguage: true
 languageCode: en-US
+languageName: English
 markup:
   goldmark:
     renderer:
       unsafe: true
+menu:
+  index:
+    - 
+      identifier: Home
+      name: Home
+      url: /index.html
+      weight: 1
+    -
+      identifier: Blog
+      name: Blog
+      url: /blog
+      weight: 3
+    -
+      identifier: Projects
+      name: Projects
+      url: /projects
+      weight: 2
 params:
   author: John Rhey Damian
-  description: a blog, and a portfolio
-  github: https://github.com/johnr-damian
-  gmail: johnr.damian98@gmail.com
+  description: a blog, and a web portfolio
+  keywords: blog, web portfolio, john rhey damian, algomorphogenesis
+  sociallinks:
+    -
+      icon: fas fa-code
+      link: https://www.codingame.com/profile/10dbe4e05745fa81c2c372a7b891caec5389083
+      name: codingame
+    -
+      icon: fab fa-github
+      link: https://github.com/johnr-damian
+      name: github
+    -
+      icon: fab fa-google
+      link: mailto:johnr.damian98@gmail.com?subject=WebPortfolio
+      name: gmail
+    -
+      icon: fab fa-linkedin
+      link: https://www.linkedin.com/in/johnr-damian
+      name: linkedin
+  spotlight: images/Algomorphogenesis.jpg
+relativeURLs: true
 taxonomies:
-  #e.g. Animation, Artificial Intelligence, Geometry
-  area: areas
-  #e.g. Academic, Project, or Tutorial
+  #What kind of content is being presented.
   category: categories
-  #e.g. C, C++, C#, Javascript, R
-  language: languages
-  #e.g. For Academic, Project, or Tutorial
-  series: series
+  #The core topics that are being talked about.
+  topic: topics
 title: Algomorphogenesis
