@@ -15,8 +15,10 @@
         <meta property='og:site_name' content='{{ .Site.Title }}' />
         <meta property='og:title' content='{{ default .Site.Title .Page.Title }}' />
         <meta property='og:description' content='{{ default .Site.Params.description .Page.Description }}' />
-        <meta property='og:image' content='{{ if eq .Page.Params.spotlight_type "image"}}{{ absURL .Page.Params.spotlight }}{{ else }}{{ absURL .Site.Params.spotlight }}{{ end }}' />
+        <meta property='og:image:secure_url' content='{{ if eq .Page.Params.spotlight_type "image"}}{{ absURL .Page.Params.spotlight }}{{ else }}{{ absURL .Site.Params.spotlight }}{{ end }}' />
+        <meta property='og:image:type' content='image/jpeg' />
         <meta property='og:type' content='website' />
+        <meta property='og:url' content='{{ .Page.Permalink }}' />
         
         <title>{{ with .Page.Title }}{{ . }} | {{ end }}{{ .Site.Title }}</title>
 
