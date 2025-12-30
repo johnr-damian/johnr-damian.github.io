@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>{{ title }} | {{ project.title }}</title>
+        <meta name="author" content="{{ author.name }}" />
+        <meta name="description" content="{{ project.description }}" />
+        <link rel="canonical" href="{{ project.url }}" />
+
+        <!-- Robots Metadata -->
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <!-- OpenGraph Metadata -->
+        <meta property="og:site_name" content="{{ project.title }}" />
+        <meta property="og:title" content="{{ title }}" />
+        <meta property="og:description" content="{{ description }}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{ project.url }}" />
+        <!-- Twitter Card Metadata -->
+        <meta name="twitter:title" content="{{ title }} | {{ project.title }}" />
+        <meta name="twitter:description" content="{{ description }}" />
+        <!-- Icons & Externals -->
+        <link rel="icon" href="favicon.ico" sizes="any" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "{{ author.name }}",
+                "url": "{{ project.url }}",
+                "sameAs": [
+                    "{{ author.socials.linkedin }}",
+                    "{{ author.socials.github }}"
+                ],
+                "jobTitle": "{{ author.job.title }}",
+            }
+        </script>
+    </head>
+    <body>
+        {{ content }}
+    </body>
+</html>

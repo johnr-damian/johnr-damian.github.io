@@ -4,7 +4,8 @@
   "description": "blog and portfolio",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx @11ty/eleventy",
+    "deploy": "npx @11ty/eleventy --serve"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
     "url": "https://github.com/johnr-damian/johnr-damian.github.io/issues"
   },
   "homepage": "https://github.com/johnr-damian/johnr-damian.github.io#readme",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
 }
