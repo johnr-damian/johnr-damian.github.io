@@ -1,0 +1,39 @@
+name: Hugo_BlogPortfolio
+on:
+  push:
+    branches: [production]
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with: 
+          fetch-depth: 0
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.74.3'
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Cache Dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install Dependencies
+        run: npm ci
+      - name: Compile SASS
+        run: npm run compile
+      - name: Compile Hugo
+        run: hugo --gc --minify --cleanDestinationDir
+      - name: Deploy Hugo
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.Hugo_BlogPortfolio }}
+          publish_branch: master
+          publish_dir: ./public
