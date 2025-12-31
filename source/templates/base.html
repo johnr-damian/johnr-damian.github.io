@@ -46,12 +46,14 @@
     <body>
         <nav>
             <ul>
-                <li><a href="{{ project.url }}/blog/">Blog</a></li>
-                <li><a href="{{ project.url }}/portfolio/">Portfolio</a></li>
+                <li><a href="/posts">Blog</a></li>
+                <li><a href="/">Portfolio</a></li>
             </ul>
         </nav>
         <main>
-            {{ content }}
+            <article>
+                {{ content }}
+            </article>
         </main>
     </body>
 </html>
