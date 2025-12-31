@@ -19,6 +19,7 @@
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ project.url }}" />
         <!-- Twitter Card Metadata -->
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="{{ title }} | {{ project.title }}" />
         <meta name="twitter:description" content="{{ description }}" />
         <!-- Icons & Externals -->
@@ -35,11 +36,22 @@
                     "{{ author.socials.linkedin }}",
                     "{{ author.socials.github }}"
                 ],
-                "jobTitle": "{{ author.job.title }}",
+                "jobTitle": "{{ author.job.title }}"
             }
         </script>
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="https://classless.de/classless.css" />
     </head>
     <body>
-        {{ content }}
+        <nav>
+            <ul>
+                <li><a href="{{ project.url }}/blog/">Blog</a></li>
+                <li><a href="{{ project.url }}/portfolio/">Portfolio</a></li>
+            </ul>
+        </nav>
+        <main>
+            {{ content }}
+        </main>
     </body>
 </html>
