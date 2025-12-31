@@ -1,3 +1,5 @@
+import { DateTime } from "luxon";
+
 export const config = {
     dir: {
         input: "source",
@@ -8,12 +10,18 @@ export const config = {
 }
 
 export default function (eleventyConfig) {
+    //Filter: date format
+    eleventyConfig.addFilter("blogdate", (dateString) => {
+        let date = new Date(dateString);
+        return DateTime.fromJSDate(date, { zone: 'utc' }).toFormat("yyyy-MM-dd");
+    });
+
     // Collection: blogposts
     eleventyConfig.addCollection("blogposts", function (collectionApi) {
         let directory = `${config.dir.input}/posts/*/**`;
         return collectionApi.getFilteredByGlob(directory).sort((a, b) => b.date - a.date);
     });
 
-    // Copy favicon to the output root so /favicon.ico resolves, in addition to images folder.
+    // Favicon: copy to the root
     eleventyConfig.addPassthroughCopy({ "source/images/favicon.ico": "favicon.ico" });
 };
